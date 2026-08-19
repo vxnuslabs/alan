@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alan — Local-First Image Utility
 
-## Getting Started
+**Alan** is a lightweight, browser-based image processing toolbox built for the modern web. The central promise is simple: **«Your images never need to leave the browser.»**
 
-First, run the development server:
+Designed with the aesthetic language of "quiet technical futurism," Alan serves as a highly functional, slightly experimental technical instrument rather than a typical SaaS dashboard.
+
+## Features
+
+Alan provides 12 core local-first tools:
+
+1. **Convert** - Change image formats between PNG, JPEG, and WEBP.
+2. **Compress** - Reduce file size with quality control.
+3. **Resize** - Scale dimensions precisely with aspect ratio locking.
+4. **Crop** - Standardized center cropping (1:1, 4:3, 16:9).
+5. **Color** - Extract precise HEX and RGB pixel data via click.
+6. **Metadata** - Inspect file and image dimensions natively.
+7. **Strip Metadata** - Clean hidden EXIF and sensitive data from files.
+8. **Adjust** - Core corrections (Brightness, Contrast, Saturation, Blur).
+9. **Compare** - Diff two images with overlay opacity blending.
+10. **Join** - Combine multiple images horizontally or vertically.
+11. **Split** - Divide a single image precisely in half.
+12. **Favicon** - Automatically generate 16x16, 32x32, and 180x180 sizes.
+
+## Technology Stack
+
+Alan relies purely on native browser APIs to handle heavy operations without a backend:
+
+- **Framework**: Next.js (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4 (Custom elegant dark theme)
+- **Icons**: Lucide React
+- **Processing**: HTML5 `<canvas>`, `File` API, `ImageBitmap`, `OffscreenCanvas`
+
+## Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Privacy & Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Alan does not require a database, authentication, or external API. It is completely static and deployable anywhere (like Vercel) without server environment variables or external storage buckets. Your images are processed in your browser memory and never leave your device.
